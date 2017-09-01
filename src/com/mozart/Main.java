@@ -16,10 +16,12 @@ public class Main {
             Scanner inCreate = new Scanner(System.in);
             String createProd = inCreate.nextLine();
 
+            // Попробуй разбить этот огромный switch на что-то более-менее удобочитаемое:) экстракция методов-наше все
             switch (createProd) {
                 case "Toy":
                     System.out.println("Enter characteristics in a space: name lego, price lego, number of details in lego");
                     Lego productLego = new Lego();
+                    // Зачм тебе новый сканер каждый раз? Создай один экземпляр перед switch и все
                     Scanner scannerLego = new Scanner(System.in);
                     productLego.init(scannerLego);
                     arrayObj[i] = productLego;
@@ -31,6 +33,7 @@ public class Main {
 
                     switch (selectionTech) {
                         case "Camera":
+                            // Если решил уж сделать так, то делай это внутри метода init. Я про вывод
                             System.out.println("Enter characteristics in a space: name camera, price camera, matrix camera, diaphragm(1.0)");
                             Camera productCamera = new Camera();
                             Scanner scannerCamera = new Scanner(System.in);
@@ -69,6 +72,8 @@ public class Main {
                             arrayObj[i] = productMilk;
                             break;
                         case "default":
+                            //Не лучший вариант - выбрасывать исключение. Попробуй придумать, как заставить пользователя ввести еще раз,
+                            // сказав ему о том, что он ввел херню
                             throw new IllegalArgumentException("Invalid input");
                     }
                     break;
@@ -78,6 +83,7 @@ public class Main {
         }
 
         System.out.println("Cost product = " + arrayObj[0].getCost());
+        // Что за параметр "200"?
         System.out.println("Xvatit money? - " + arrayObj[0].canBuy(200));
 
 
