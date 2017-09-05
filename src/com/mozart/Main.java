@@ -17,34 +17,31 @@ public class Main {
             String createProd = inCreate.nextLine();
 
             // Попробуй разбить этот огромный switch на что-то более-менее удобочитаемое:) экстракция методов-наше все
+            Scanner scanner = new Scanner(System.in);
             switch (createProd) {
                 case "Toy":
                     System.out.println("Enter characteristics in a space: name lego, price lego, number of details in lego");
                     Lego productLego = new Lego();
                     // Зачм тебе новый сканер каждый раз? Создай один экземпляр перед switch и все
-                    Scanner scannerLego = new Scanner(System.in);
-                    productLego.init(scannerLego);
+                    productLego.init(scanner);
                     arrayObj[i] = productLego;
                     break;
                 case "Technique":
                     System.out.println("What technique do you want to create?: Camera, Laptop");
-                    Scanner createTech = new Scanner(System.in);
-                    String selectionTech = createTech.nextLine();
+                    String selectionTech = scanner.nextLine();
 
                     switch (selectionTech) {
                         case "Camera":
                             // Если решил уж сделать так, то делай это внутри метода init. Я про вывод
                             System.out.println("Enter characteristics in a space: name camera, price camera, matrix camera, diaphragm(1.0)");
                             Camera productCamera = new Camera();
-                            Scanner scannerCamera = new Scanner(System.in);
-                            productCamera.init(scannerCamera);
+                            productCamera.init(scanner);
                             arrayObj[i] = productCamera;
                             break;
                         case "Laptop":
                             System.out.println("Enter characteristics in a space: name laptop, price laptop, diogonal(1.0), cpu(1.0)");
                             Laptop productLaptop = new Laptop();
-                            Scanner scannerLaptop = new Scanner(System.in);
-                            productLaptop.init(scannerLaptop);
+                            productLaptop.init(scanner);
                             arrayObj[i] = productLaptop;
                             break;
                         case "default":
@@ -53,28 +50,25 @@ public class Main {
                     break;
                 case "Lactic":
                     System.out.println("What technique do you want to create?: Kefir, Milk");
-                    Scanner createLactic = new Scanner(System.in);
-                    String selectionLactic = createLactic.nextLine();
+                    String selectionLactic = scanner.nextLine();
 
                     switch (selectionLactic) {
                         case "Kefir":
                             System.out.println("Enter characteristics in a space: name kefir, price kefir, alcohol kefir(1.0)");
                             Kefir productKefir = new Kefir();
-                            Scanner scannerKefir = new Scanner(System.in);
-                            productKefir.init(scannerKefir);
+                            productKefir.init(scanner);
                             arrayObj[i] = productKefir;
                             break;
                         case "Milk":
                             System.out.println("Enter characteristics in a space: name milk, price milk, fat content(1.0) milk");
                             Milk productMilk = new Milk();
-                            Scanner scannerMilk = new Scanner(System.in);
-                            productMilk.init(scannerMilk);
+                            productMilk.init(scanner);
                             arrayObj[i] = productMilk;
                             break;
                         case "default":
                             //Не лучший вариант - выбрасывать исключение. Попробуй придумать, как заставить пользователя ввести еще раз,
                             // сказав ему о том, что он ввел херню
-                            throw new IllegalArgumentException("Invalid input");
+                            System.out.println("Pidor vvedi norm dannyy!");
                     }
                     break;
                 case "default":
@@ -84,7 +78,8 @@ public class Main {
 
         System.out.println("Cost product = " + arrayObj[0].getCost());
         // Что за параметр "200"?
-        System.out.println("Xvatit money? - " + arrayObj[0].canBuy(200));
+        int youHaveManey = 200;
+        System.out.println("Xvatit money? - " + arrayObj[0].canBuy(youHaveManey));
 
 
         int cost = 0;

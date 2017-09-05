@@ -3,11 +3,6 @@ package com.mozart;
 import java.util.Scanner;
 
 class Toy extends Product {
-    // возвращается состояние объекта в виде строки определяет толко в наследниках
-
-    @Override
-    public void init(Scanner scanner) {
-    }
 
     @Override
     public int getCost() {
@@ -28,8 +23,8 @@ class Lego extends Toy {
     public void init(Scanner scanner) {
         String input = scanner.nextLine();
         String inSplit[] = input.split(" ");
-        this.name = inSplit[0];
-        this.price = Integer.valueOf(inSplit[1]);
+        super.name = inSplit[0];
+        super.price = Integer.valueOf(inSplit[1]);
         this.numberOfDetails = Integer.valueOf(inSplit[2]);
     }
 

@@ -10,7 +10,12 @@ public abstract class Product {
     // У тебя все эти поля общие, почему бы не сделать инициализацию name и price прям тут и вызывать потом super.init(scanner)?
     
     // считывание параметров с консоли (вводятся характеристики товара)
-    public abstract void init(Scanner scanner);
+    public void init(Scanner scanner) {
+        String input = scanner.nextLine();
+        String inSplit[] = input.split(" ");
+        this.name = inSplit[0];
+        this.price = Integer.valueOf(inSplit[1]);
+    }
 
     //возвращает стоимость товара
     public abstract int getCost();
