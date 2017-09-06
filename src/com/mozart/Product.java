@@ -12,8 +12,8 @@ public abstract class Product {
     public void init(Scanner scanner) {
         String input = scanner.nextLine();
         String inSplit[] = input.split(" ");
-        this.name = inSplit[0];
-        this.price = Integer.valueOf(inSplit[1]);
+        name = inSplit[0];
+        price = Integer.valueOf(inSplit[1]);
     }
 
     public abstract int getCost();

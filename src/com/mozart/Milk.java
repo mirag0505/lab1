@@ -10,13 +10,12 @@ class Milk extends Lactic {
     public void init(Scanner scanner) {
         String input = scanner.nextLine();
         String inSplit[] = input.split(" ");
-        super.name = inSplit[0];
-        super.price = Integer.valueOf(inSplit[1]);
-        this.fat = Double.valueOf(inSplit[2]);
+        super.init(scanner);
+        fat = Double.valueOf(inSplit[2]);
     }
 
     @Override
     public String toString() {
-        return this.name + " " + this.price + " " + this.fat;
+        return name + " " + price + " " + fat;
     }
 }
