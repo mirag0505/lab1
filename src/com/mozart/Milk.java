@@ -15,6 +15,7 @@ class Milk extends Lactic {
         this.fat = Double.valueOf(inSplit[2]);
     }
 
+    @Override
     public String toString() {
         return this.name + " " + this.price + " " + this.fat;
     }

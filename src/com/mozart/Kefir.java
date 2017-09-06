@@ -14,6 +14,7 @@ class Kefir extends Lactic {
         this.alcohol = Double.valueOf(inSplit[2]);
     }
 
+    @Override
     public String toString() {
         return this.name + " " + this.price + " " + this.alcohol;
     }

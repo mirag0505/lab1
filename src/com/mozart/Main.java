@@ -22,7 +22,6 @@ public class Main {
                 case "Toy":
                     System.out.println("Enter characteristics in a space: name lego, price lego, number of details in lego");
                     Lego productLego = new Lego();
-                    // Зачм тебе новый сканер каждый раз? Создай один экземпляр перед switch и все
                     productLego.init(scanner);
                     arrayObj[i] = productLego;
                     break;
@@ -36,7 +35,6 @@ public class Main {
                             System.out.println("Enter characteristics in a space: name camera, price camera, matrix camera, diaphragm(1.0)");
                             Camera productCamera = new Camera();
                             productCamera.init(scanner);
-                            arrayObj[i] = productCamera;
                             break;
                         case "Laptop":
                             System.out.println("Enter characteristics in a space: name laptop, price laptop, diogonal(1.0), cpu(1.0)");
@@ -45,7 +43,7 @@ public class Main {
                             arrayObj[i] = productLaptop;
                             break;
                         case "default":
-                            throw new IllegalArgumentException("Invalid input");
+                            System.out.println("Pidor vvedi norm dannyy!");
                     }
                     break;
                 case "Lactic":
@@ -90,6 +88,7 @@ public class Main {
                 cost = arrayObj[i].price;
             }
         }
+
         System.out.println(arrayObj[numberMaxObj].toString());
 
     }

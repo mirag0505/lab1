@@ -5,7 +5,6 @@ import java.util.Scanner;
 class Camera extends Technique {
     public int matrix;
     public double diaphragm;
-    // возвращается состояние объекта в виде строки определяет толко в наследниках
 
     @Override
     public void init(Scanner scanner) {
@@ -17,6 +16,7 @@ class Camera extends Technique {
         this.diaphragm = Double.valueOf(inSplit[3]);
     }
 
+    @Override
     public String toString() {
         return this.name + " " + this.price + " " + this.matrix + " " + this.diaphragm;
     }
